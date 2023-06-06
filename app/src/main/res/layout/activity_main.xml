@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="person"
+            type="com.example.jetpackcomposedatabindingtutorial.Person" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".MainActivity">
+        <TextView
+            android:id="@+id/txtCurrName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@={person.name, default=@string/default_text}'
+            android:textSize="23sp" />
+        <EditText
+            android:id="@+id/edtTxtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCurrName"
+            android:hint="@string/your_name"
+            android:textSize="23sp"/>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtTxtName"
+            android:text="@string/change_your_name" />
+    </RelativeLayout>
+</layout>
